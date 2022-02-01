@@ -1,0 +1,33 @@
+print("Игра - угадайка.")
+import random
+import time
+time.sleep(1)
+y = random.randint(1, 50)
+print("Я загадал число от 1 до 50")
+time.sleep(1)
+x = int(input("Попробуй угадать его:"))
+e = 1
+if x == y:
+  time.sleep(1)
+  print("Молодец) На этом всё. Ты угадал с 1-ого раза!")
+  raise SystemExit
+while x != y:
+  if x > y:
+    time.sleep(1)
+    print("Надо число поменьше...")
+    time.sleep(1)
+    print("Выбери число, которое надо вычесть из", x,":")
+    a = int(input())
+    x = x-a
+    e=e+1
+  if x < y:
+    time.sleep(1)
+    print("Надо число побольше...")
+    time.sleep(1)
+    print("Выбери число, которое надо прибавить к", x,":")
+    a = int(input())
+    x = x+a
+    e=e+1
+  a = 0
+time.sleep(1)
+print("Вот и всё. Это число: ",y, ". А угадал ты его с ", e ," раза.")
